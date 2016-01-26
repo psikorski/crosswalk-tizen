@@ -29,7 +29,8 @@ namespace common {
 namespace {
 
 std::string localeToBCP47LangTag(
-    const std::string locale) {
+    const char *arg) {
+  std::string locale(arg);
   // Cut off codepage information from given string (if any exists)
   // i.e. change en_US.UTF-8 into en_US */
   std::string lang = locale.substr(0, locale.find_first_of("."));

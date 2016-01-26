@@ -93,9 +93,8 @@ URLImpl::URLImpl(const std::string& url) : port_(0) {
 }
 
 bool URLImpl::ExtractScheme() {
-  size_t end_of_scheme = 0;
   if (url_.find("://") != std::string::npos) {
-    end_of_scheme = url_.find("://");
+    size_t end_of_scheme = url_.find("://");
     std::string scheme = url_.substr(0, end_of_scheme);
     std::transform(scheme.begin(), scheme.end(), scheme.begin(), ::tolower);
     scheme_ = scheme;

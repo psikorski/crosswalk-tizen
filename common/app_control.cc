@@ -213,21 +213,9 @@ std::string AppControl::encoded_bundle() {
   return std::string(reinterpret_cast<char*>(encoded_data), len);
 }
 
-bool AppControl::IsDataArray(const std::string& key) {
-  return appsvc_data_is_array(app_control_bundle_, key.c_str());
-}
-
 bool AppControl::AddData(const std::string& key, const std::string& value) {
   return BundleAddData(app_control_bundle_, key, value);
 }
-
-
-
-bool AppControl::AddDataArray(const std::string& key,
-                              const std::vector<std::string>& value_array) {
-  return BundleAddDataArray(app_control_bundle_, key, value_array);
-}
-
 
 bool AppControl::Reply(const std::map<std::string,
                                       std::vector<std::string>>& data) {

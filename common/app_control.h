@@ -49,10 +49,7 @@ class AppControl {
   std::vector<std::string> data_array(const std::string& key) const;
   std::string encoded_bundle();
 
-  bool IsDataArray(const std::string& key);
   bool AddData(const std::string& key, const std::string& value);
-  bool AddDataArray(const std::string& key,
-                    const std::vector<std::string>& value_array);
   bool Reply(const std::map<std::string, std::vector<std::string>>& data);
   bool LaunchRequest();
 

@@ -74,8 +74,9 @@ static std::string GetPackageRootPath(const std::string& pkgid) {
 
 }  // namespace
 
-ApplicationData::ApplicationData(const std::string& appid) : app_id_(appid) {
-  pkg_id_ = GetPackageIdByAppId(appid);
+ApplicationData::ApplicationData(const std::string& appid) :
+    pkg_id_(GetPackageIdByAppId(appid)),
+    app_id_(appid){
   if (!pkg_id_.empty())
     application_path_ = GetPackageRootPath(pkg_id_) + kPathSeparator
                         + kResWgtPath + kPathSeparator;

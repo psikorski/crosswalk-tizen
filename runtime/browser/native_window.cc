@@ -35,7 +35,8 @@ NativeWindow::NativeWindow()
       layout_(NULL),
       content_(NULL),
       rotation_(0),
-      handler_id_(0) {
+      handler_id_(0),
+      natural_orientation_(ScreenOrientation::PORTRAIT_PRIMARY){
 }
 
 NativeWindow::~NativeWindow() {

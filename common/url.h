@@ -50,6 +50,7 @@ class URLImpl;
 class URL {
  public:
   explicit URL(const std::string& url);
+  URL(const URL& other) = delete;
   ~URL();
 
   std::string url() const;

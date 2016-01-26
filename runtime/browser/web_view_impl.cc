@@ -813,7 +813,6 @@ void WebViewImpl::InitUsermediaCallback() {
       LOGGER(DEBUG) << "Getusermedia Permission Result : " << result;
       ewk_user_media_permission_reply(request, result);
     };
-    std::string test = url.str();
     self->listener_->OnUsermediaPermissionRequest(self->view_,
                                                   url.str(),
                                                   result_handler);
